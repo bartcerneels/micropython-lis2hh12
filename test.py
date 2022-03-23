@@ -14,5 +14,7 @@ def read_sensor(timer):
 
 print("LIS2DH12 id: " + hex(sensor.whoami))
 
+sensor.enable_act_int()
+
 timer_0 = Timer(0)
 timer_0.init(period=1000, mode=Timer.PERIODIC, callback=read_sensor)
